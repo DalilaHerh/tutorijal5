@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         KorisniciModel model = new KorisniciModel();
         model.napuni();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../../../../resources/sample.fxml"));
         loader.setController(new KorisnikController(model));
         Parent root = loader.load();
         primaryStage.setScene(new Scene(root));
