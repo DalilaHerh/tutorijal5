@@ -1,61 +1,88 @@
 package ba.unsa.etf.rs.tut5;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Korisnik {
-    private String ime,prezime,email,username,password;
 
-    public Korisnik() {
-    }
-
-    public Korisnik(String ime, String prezime, String email, String username, String password) {
-        this.ime = ime;
-        this.prezime = prezime;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
+    private SimpleStringProperty ime = new SimpleStringProperty("");
+    private SimpleStringProperty prezime = new SimpleStringProperty("");
+    private SimpleStringProperty mail = new SimpleStringProperty("");
+    private SimpleStringProperty korisnickoIme = new SimpleStringProperty("");
+    private SimpleStringProperty lozinka = new SimpleStringProperty("");
 
     public String getIme() {
+        return ime.get();
+    }
+
+    public SimpleStringProperty imeProperty() {
         return ime;
     }
 
     public void setIme(String ime) {
-        this.ime = ime;
+        this.ime.set(ime);
     }
 
     public String getPrezime() {
+        return prezime.get();
+    }
+
+    public SimpleStringProperty prezimeProperty() {
         return prezime;
     }
 
     public void setPrezime(String prezime) {
-        this.prezime = prezime;
+        this.prezime.set(prezime);
     }
 
-    public String getEmail() {
-        return email;
+    public String getMail() {
+        return mail.get();
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public SimpleStringProperty mailProperty() {
+        return mail;
     }
 
-    public String getUsername() {
-        return username;
+    public void setMail(String mail) {
+        this.mail.set(mail);
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getKorisnickoIme() {
+        return korisnickoIme.get();
     }
 
-    public String getPassword() {
-        return password;
+    public SimpleStringProperty korisnickoImeProperty() {
+        return korisnickoIme;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setKorisnickoIme(String korisnickoIme) {
+        this.korisnickoIme.set(korisnickoIme);
+    }
+
+    public String getLozinka() {
+        return lozinka.get();
+    }
+
+    public SimpleStringProperty lozinkaProperty() {
+        return lozinka;
+    }
+
+    public void setLozinka(String lozinka) {
+        this.lozinka.set(lozinka);
+    }
+
+    public Korisnik(){};
+
+    public Korisnik(String ime, String prezime, String mail,
+                    String korisnickoIme, String lozinka) {
+        this.ime = new SimpleStringProperty(ime);
+        this.prezime = new SimpleStringProperty(prezime);
+        this.mail = new SimpleStringProperty(mail);
+        this.korisnickoIme = new SimpleStringProperty(korisnickoIme);
+        this.lozinka = new SimpleStringProperty(lozinka);
     }
 
     @Override
     public String toString() {
-        return ime+" "+prezime;
+        return ime.get() + " " + prezime.get();
     }
 }
